@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stilos_dom.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <header class="titulo1">
+            <h1>
+                document
+            </h1>
+        </header>
+
+
+        <div>
+            <h2 id="partes_dom">partes del dom</h2>
+
+
+            <ul id="ul_partes_dom">
+                <li>
+                    <h3>
+                        guardar partes del dom en una variable
+                    </h3>
+
+
+                    <ul>
+                        <li>
+                            <strong>
+                                etiqueta head:
+                            </strong> <br>
+                            let cabvezera: document.document
+                        </li> <br>
+                        <li>
+                            etiqueta body: <br>
+                            let body=document.body;
+                        </li> <br>
+                        <li>
+                            etiqueta html: solo se accede ala etiqueta no al mapeo <br>
+                            let etiqueta_html= document.documentElement;
+                        </li> <br>
+                        <li>
+                            al tipo de documento: <br>
+                            let tipo_de_documento= document.doctype;
+                        </li> <br>
+                        <li>
+                            a la etiqueta title: <br>
+                            let title= document.title;
+                        </li> <br>
+                        <li>
+                            links de mi pagina: <br>
+                            let link= document.link;
+                        </li><br>
+                        <li>
+                            imagenes: <br>
+                            let imagenes=document.images;
+                        </li> <br>
+                        <li>
+                            formularios de mi documento: <br>
+                            let formularios=document.forms;
+                        </li> <br>
+
+                        <li>
+                            escript de mi pagina: <br>
+                            let escript= document.script;
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <hr> <br>
+
+            <div>
+                <ul>
+                    <li>
+                        <h2>
+                            interactuar con nodos y elementos
+                        </h2>
+                        <ul>
+                            <li>
+                                <h3>
+                                    nodos de tipo element: es una etiuqeta html en particular
+                                </h3>
+
+                                <ul>
+                                    <li>
+                                        capturar un elemento por el nombre de una etiqueta: <br>
+                                        document.getElementsByTagName( " li " )
+                                    </li><br>
+                                    <li>
+                                        caputar un elemento por el slector de class: <br>
+                                        document.getElementsByClassName( " " )
+                                    </li> <br>
+                                    <li>
+                                        capturar un elemento por selector id: <br>
+                                        document.getElementById( " " )
+                                    </li> <br>
+                                    <li>
+                                        capturar un elemento por el atributo Name: formularios <br>
+                                        document.getElementsByName( " " )
+                                    </li> <br>
+                                    <li>
+                                        capturar por un selector cualquiera: captura solo el primer elemento <br>
+                                        document.querySelector( " " )
+                                    </li> <br>
+                                    <li>
+                                        capturar por un selector cualquiera: captura todos los elementos <br>
+                                        document.querySelectorAll( " " )
+                                    </li> <br>
+                                    <li>
+
+                                    </li> <br>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <h3>
+                                    nodos de tipo tex:
+                                    son los textos que tienen adentro una etiqueta
+                                </h3>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+
+
+            </div>
+
+
+        </div>
+
+        <div>
+            <ul>
+                <li>
+                    <h3>
+                        accendiendo a tributos y Data-Attributes de html
+                    </h3>
+                    <ul>
+                        <li> 1 con la nomenclatura del punto: <br>
+                            const atributo_lang= document.documentElement.lang;
+
+                        </li> <br>
+
+                        <li>
+                            2 con la nomenclatura del punto: <br>
+                            const atributo_con_nomenclatura_del_punto= document.getElementById( ""
+                            ).nombre_del_atributo;
+                        </li> <br>
+                        <li>
+                            3 con el metodo getAttribute: <br>
+                            const atributo_con_getAttribute= document.getElementById( "" ); <br>
+                            atributo_con_getAttribute.getAttribute("nombre del atributo");
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>modificando los atributos</h3>
+                    <ul>
+                        <li>
+                            1.1 atributo_lang=en;
+                        </li> <br>
+                        <li>
+                            2.1 atributo_con_nomenclatura_del_punto=valor_acambiar
+                        </li> <br>
+                        <li>
+                            3.1 atributo_con_getAttribute.setAttribute("attibuto", "valor_acambiar" )
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <hr>
+
+        <div>
+            <ul>
+                <li>
+                    <h3>
+                        interactuando con estilos css
+                    </h3>
+                    <ul>
+                        <li>
+                            <p>capturar en una variable un estilo css</p>
+                            const stilo= document.getElementById("ul_partes_dom");
+                        </li> <br>
+                        <li>
+                            <p>capturar en una variable una propiedad en concreto de css</p>
+                            const color=getComputedStyle(stilo).getPropertyValue("color");
+                        </li> <br>
+                        <li>
+                            <p>modificar un estilos css </p>
+                            stilo.style.backgroundColor="red" <br>
+                            color=stilo.style.color="yellow"
+                        </li><br>
+                        <li>
+                            <p> con variables css</p>
+                            let color_body=getComputedStyle(body).getPropertyValue("--color_fondo"); <br>
+                            body.style.backgroundColor=color_body;
+                        </li> <br>
+                        <li>
+                            <p> saber si un elemento tiene una class:</p>
+                            const classes=document.querySelector(".titulo1") <br>
+                            classes.classList.contains("titulo1")
+
+                        </li> <br>
+                        <li>
+                            <p> ageregar una class </p>
+                            const add_clsase=document.querySelector(".titulo1") <br>
+                            add_clsase.classList.add("titulo2")
+                        </li><br>
+                        <li>
+                            <p>remover una class</p>
+                            add_clsase.classList.remove("titulo1")
+                        </li><br>
+                        <li>
+                            <p> el toogle si tiene una clase se la quita y si no se la pone </p>
+                            add_clsase.classList.toggle("titulo2")
+                        </li><br>
+                        <li>
+                            <p> replace reemplazar una clase por otra</p>
+                            add_clsase.classList.replace("titulo1","titulo2")
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>
+                isertando textos y elementos
+            </h3>
+            <p id="interactuando"> LUIS FERHHNKAJAKJAIA
+            </p>
+            <ul>
+                <li>
+                    const luis = document.getElementById("interactuando"); <br>
+                    let text = `p <br> 
+                    Lorem ipsum dolor, sit amet  <br>
+                     p <br> <br> <br>
+
+                    p <br> 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, vel <br>
+                    p <br> <br> <br>
+
+                   p <br> 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit <br>
+                        p <br> <br> 
+                   ` ; <br>
+                               ` ; <br>
+            
+                  luis.innerHTML=text; SIRVE PARA AGREGAR ELEMENTOS HTML DENTRO DEL SELECTOR SELECCIONADO
+
+                </li> <br>
+
+                <li> 
+                    const luis = document.getElementById("interactuando"); <br>
+                    let text =`p <br> 
+                    Lorem ipsum dolor, sit amet  <br>
+                     p <br> <br> <br>
+
+                    p <br> 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, vel <br>
+                    p <br> <br> <br>
+
+                   p <br> 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit <br>
+                        p <br> <br> 
+                   ` ; <br>
+                              
+                               luis.textContent=text;  SRIVE PARA AGERGAR TEXTO
+                               
+                </li> <br>
+                <li>
+                    const luis = document.getElementById("interactuando"); <br>
+                    let text = `p <br> 
+                                Lorem ipsum dolor, sit amet  <br>
+                                 p <br> <br> <br>
+
+                                p <br> 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, vel <br>
+                                p <br> <br> <br>
+
+                               p <br> 
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit <br>
+                                    p <br> <br> 
+                               ` ; <br>
+                               luis.outerHTML=text;  SIRVE PARA reemplazar ELEMENTOS HTML 
+
+                </li>
+            </ul>
+        </div>
+
+        <div>
+           
+            <li>
+                <h2>
+                    recorriendo el dom
+                </h2>
+                <p>children busca el primer hijo</p>
+                <p> children [2] busca el hijo segun su posicion</p>
+                <p>parentElement busca el padre el elemento </p>
+                <p>firtsChildren hace referencia al primer hijo</p>
+                <p> lastChildren hace referencia al ultimo hiho</p>
+                <p>previosElementsibling hace referencia al elemento anterior</p>
+                <p>nextElementSibling hace referecia al elemento siguiente</p>
+            </li>
+        </div>
+
+        <div>
+            <h2>
+                crear elementos y fragmentos con js
+            </h2>
+            <div id="nuevos_elementos">
+
+                <p>
+                    function nuevos_el() { <br>
+                        const $div= document.getElementById("nuevos_elementos"); <br>
+                       const figure1=document.createElement("figure") <br>
+                       const img1=document.createElement("img")<br>
+                       const pie_imagen1= document.createTextNode("nueva imagen 1")<br>
+                       const figcaption=document.createElement("figcaption")<br>
+                    
+                       img1.setAttribute("src", "img/th.jfif")<br>
+                        $div.appendChild(figure1);<br>
+                        figure1.appendChild(img1)<br>
+                        img1.appendChild(figcaption)<br>
+                        figcaption.appendChild(pie_imagen1)<br>
+                       }<br>
+                    
+                       nuevos_el();
+                </p>
+
+            </div>
+        </div>
+
+        <div>
+            <h2> etiqueta template</h2>
+            <p>
+                en esta etiqueta se utiliza para generar elelentos dinamicos desde js
+            </p>
+        </div>
+
+        <div class=" quitar">
+            <h2>modificando elementos del dom</h2>
+           <ul>
+         
+            <li>
+                <h3>reemplazar un nodo; metodo replacechild(nuevo,viejo)</h3>
+                <ul>
+                    <li id="li_img">
+                        <img src="img/th1.jfif" alt="">
+                        <button id="btn6">cambiar img</button>
+                        <p>
+                            
+ function reemplazar() {  <br>
+    const img_quitar=document.getElementById("li_img")<br>
+    const nuevo=document.createElement("img")<br>
+    nuevo.setAttribute("src","img/th.jfif")<br>
+    img_quitar.replaceChild(nuevo, img_quitar.children[0])<br>
+    
+    
+    
+      }<br>
+    
+      document.getElementById("btn6").addEventListener("click", reemplazar, false)
+                        </p>
+                    </li>
+                    <li>
+                        <h3>insertar un nodo antes</h3>
+                        <p>se hace con el metodo insertBefore</p>
+                    </li>
+                    <li>eliminar
+                        <p>removechild</p>
+                    </li>
+                    <li>
+                        <h3>colnar</h3>
+                        <p>con el metodo .cloneNode(true) <br>el prametro true es para que clone toda la estructura</p>
+                    </li>
+                </ul>
+            </li>
+           </ul>
+        </div>
+
+
+
+
+    </section>
+
+    <script>
+  
+
+   function nuevos_el() {
+    const $div= document.getElementById("nuevos_elementos");
+   const figure1=document.createElement("figure")
+   const img1=document.createElement("img")
+   const pie_imagen1= document.createTextNode("nueva imagen 1")
+   const figcaption=document.createElement("figcaption")
+
+   img1.setAttribute("src", "img/th.jfif")
+    $div.appendChild(figure1);
+    figure1.appendChild(img1)
+    img1.appendChild(figcaption)
+    figcaption.appendChild(pie_imagen1)
+   }
+
+   nuevos_el();
+  
+
+ function reemplazar() { 
+const img_quitar=document.getElementById("li_img")
+const nuevo=document.createElement("img")
+nuevo.setAttribute("src","img/th.jfif")
+img_quitar.replaceChild(nuevo, img_quitar.children[0])
+
+
+
+  }
+
+  document.getElementById("btn6").addEventListener("click", reemplazar, false)
+
+    </script>
+
+
+</body>
+
+</html>
